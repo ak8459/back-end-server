@@ -9,9 +9,21 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send("Hello World")
+})
+app.get('/about', (req, res) => {
+    res.send("About Page")
+})
+app.get('/contact', (req, res) => {
+    res.send("Contact Page")
+})
+app.get('/signin', (req, res) => {
+    res.send("Signin Page")
+})
+// app.use('/user', userRouter);
+// app.use('/notes', noteRouter);
 
-app.use('/user', userRouter);
-app.use('/notes', noteRouter);
 app.listen(port, async () => {
     try {
         await connection
